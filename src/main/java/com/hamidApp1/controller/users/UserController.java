@@ -1,7 +1,7 @@
-package ir.shaabani.controller.users;
+package com.hamidApp1.controller.users;
 
-import ir.shaabani.model.users.User;
-import ir.shaabani.service.users.UserService;
+import com.hamidApp1.model.users.User;
+import com.hamidApp1.service.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
