@@ -1,12 +1,9 @@
-package com.hamidApp1.controller.users;
+package com.hamidApp1.controller.usersTests;
 
 import com.hamidApp1.model.users.User;
-import com.hamidApp1.service.users.UserService;
+import com.hamidApp1.service.usersTest.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,7 +14,7 @@ public class UserController {
     private UserService userService;
 
 
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    @GetMapping(value = "/findAll")
     public List<User> getAll() {
         return userService.findAll();
     }

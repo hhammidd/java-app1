@@ -1,4 +1,4 @@
-package ir.shaabani.model.users;
+package com.hamidApp1.model.users;
 
 import javax.persistence.*;
 import java.io.Serializable;

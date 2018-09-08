@@ -1,6 +1,6 @@
-package ir.shaabani.dao.users;
+package com.hamidApp1.dao.usersTests;
 
-import ir.shaabani.model.users.User;
+import com.hamidApp1.model.users.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
