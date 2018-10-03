@@ -11,4 +11,6 @@ public interface UserDao extends JpaRepository<User, Long> {
 
     @Query("SELECT u FROM User u WHERE u.firstName = :firstName")
     public List<User> findByFirstName(@Param("firstName") String firstName);
+
+
 }

@@ -30,6 +30,7 @@
        <property name="username" value="root"/>
        <property name="password" value="password"/>
        <property name="connectionProperties">
+
             <props>
                 <prop key="defaultTransactionIsolatio">READ_UNCOMMITTED</prop>
                 <prop key="maxActive">150</prop>

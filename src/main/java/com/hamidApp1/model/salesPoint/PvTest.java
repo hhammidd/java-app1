@@ -3,10 +3,10 @@ package com.hamidApp1.model.salesPoint;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "pv")
-public class Pv {
+@Table(name = "pvtest")
+public class PvTest {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private int pv_id;
     private String name1 ;
     private String username;
@@ -64,7 +64,7 @@ public class Pv {
 
     @Override
     public String toString() {
-        return "Pv{" +
+        return "PvTest{" +
                 "pv_id=" + pv_id +
                 ", name1='" + name1 + '\'' +
                 ", username='" + username + '\'' +

@@ -1,13 +1,15 @@
 package com.hamidApp1.service.salePoint;
 
-import com.hamidApp1.model.salesPoint.Pv;
+import com.hamidApp1.model.salesPoint.PvTest;
 
 import java.util.List;
 
 public interface SalePointService {
-    public List<Pv> findAll();
-    public Pv findById(int pv_id);
-    public List<Pv> findByFirstName(String name1);
+    public List<PvTest> findAll();
+    public PvTest findById(int pv_id);
+    public List<PvTest> findByFirstName(String name1);
 
-    public List<Pv> findIstat(int pv_id);
+    public List<PvTest> findIstat(int pv_id);
+
+    void savePv(PvTest pvs);
 }

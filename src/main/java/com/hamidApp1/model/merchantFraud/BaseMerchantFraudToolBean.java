@@ -1,71 +1,123 @@
 package com.hamidApp1.model.merchantFraud;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.hamidApp1.service.json.serializer.LocalDateDeserializer;
-import com.hamidApp1.service.json.serializer.LocalDateSerializer;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.sql.Date;
 
-public class BaseMerchantFraudTool {
 
-    private long rowId;
-    private String userCod;
-    private String portfolio;
 
-    @JsonSerialize(using = LocalDateSerializer.class)
-    @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDate analysisDate;
+@Entity
+@Table(name ="merchant_fraud_history")
+public class BaseMerchantFraudToolBean implements Serializable {
 
+    @Id
+    private int rowId;
+    private String USER_COD;
+    private String PORTFOLIO;
+    private Date ANALYSIS_DATE;
+
+    @Column(name = "ID_MERCHANT")
     private String merchantId;
+    @Column(name = "MERCHANT")
     private String merchantName;
+    @Column(name = "CITY")
     private String city;
+    @Column(name = "COUNTRY_ISO")
     private String countryIso;
+    @Column(name = "COUNTRY")
     private String country;
+    @Column(name = "MCC")
     private String mcc;
+
+
+
+    //@Column(name = "TOTAL_FRAUD_APPROVED_AMOUNT", precision = 19, scale = 4)
+    @Column(name = "TOTAL_FRAUD_APPROVED_AMOUNT")
     private BigDecimal totalFraudApprovedAmount;
+
+    @Column(name = "AMOUNT_LIMIT")
     private String amountLimitAnalyzed;
+
+    @Column(name = "FPI")
     private int fpi;
+    @Column(name = "INTERVAL_DAYS")
     private int analysisIntervalDays;
+    @Column(name = "INVOLVED_CARDS_QTY")
     private int involvedCards;
+    @Column(name = "BLOCKED_REVOKED_CARDS_QTY")
     private int blockedAndRevokedCards;
+    @Column(name = "TYPE_MERCHANT")
     private String typeMerchant;
+    @Column(name = "RULE_TYPE")
     private String rule;
+    @Column(name = "ACTION")
     private String action;
+
+    @Column(name = "SPECIAL_CASE")
     private boolean specialCase;
+    @Column(name = "SCORE_POINT")
     private BigDecimal score;
 
-    public long getRowId() {
+
+    public BaseMerchantFraudToolBean() {
+    }
+
+    public BaseMerchantFraudToolBean(int rowId, String USER_COD, String PORTFOLIO, Date ANALYSIS_DATE, String merchantId, String merchantName, String city, String countryIso, String country, String mcc, BigDecimal totalFraudApprovedAmount, String amountLimitAnalyzed, int fpi, int analysisIntervalDays, int involvedCards, int blockedAndRevokedCards, String typeMerchant, String rule, String action, boolean specialCase, BigDecimal score) {
+        this.rowId = rowId;
+        this.USER_COD = USER_COD;
+        this.PORTFOLIO = PORTFOLIO;
+        this.ANALYSIS_DATE = ANALYSIS_DATE;
+        this.merchantId = merchantId;
+        this.merchantName = merchantName;
+        this.city = city;
+        this.countryIso = countryIso;
+        this.country = country;
+        this.mcc = mcc;
+        this.totalFraudApprovedAmount = totalFraudApprovedAmount;
+        this.amountLimitAnalyzed = amountLimitAnalyzed;
+        this.fpi = fpi;
+        this.analysisIntervalDays = analysisIntervalDays;
+        this.involvedCards = involvedCards;
+        this.blockedAndRevokedCards = blockedAndRevokedCards;
+        this.typeMerchant = typeMerchant;
+        this.rule = rule;
+        this.action = action;
+        this.specialCase = specialCase;
+        this.score = score;
+    }
+
+    public int getRowId() {
         return rowId;
     }
 
-    public void setRowId(long rowId) {
+    public void setRowId(int rowId) {
         this.rowId = rowId;
     }
 
-    public String getUserCod() {
-        return userCod;
+    public String getUSER_COD() {
+        return USER_COD;
     }
 
-    public void setUserCod(String userCod) {
-        this.userCod = userCod;
+    public void setUSER_COD(String USER_COD) {
+        this.USER_COD = USER_COD;
     }
 
-    public String getPortfolio() {
-        return portfolio;
+    public String getPORTFOLIO() {
+        return PORTFOLIO;
     }
 
-    public void setPortfolio(String portfolio) {
-        this.portfolio = portfolio;
+    public void setPORTFOLIO(String PORTFOLIO) {
+        this.PORTFOLIO = PORTFOLIO;
     }
 
-    public LocalDate getAnalysisDate() {
-        return analysisDate;
+    public Date getANALYSIS_DATE() {
+        return ANALYSIS_DATE;
     }
 
-    public void setAnalysisDate(LocalDate analysisDate) {
-        this.analysisDate = analysisDate;
+    public void setANALYSIS_DATE(Date ANALYSIS_DATE) {
+        this.ANALYSIS_DATE = ANALYSIS_DATE;
     }
 
     public String getMerchantId() {
@@ -203,31 +255,6 @@ public class BaseMerchantFraudTool {
     public void setScore(BigDecimal score) {
         this.score = score;
     }
-
-    @Override
-    public String toString() {
-        return "BaseMerchantFraudTool{" +
-                "rowId=" + rowId +
-                ", userCod='" + userCod + '\'' +
-                ", portfolio='" + portfolio + '\'' +
-                ", analysisDate=" + analysisDate +
-                ", merchantId='" + merchantId + '\'' +
-                ", merchantName='" + merchantName + '\'' +
-                ", city='" + city + '\'' +
-                ", countryIso='" + countryIso + '\'' +
-                ", country='" + country + '\'' +
-                ", mcc='" + mcc + '\'' +
-                ", totalFraudApprovedAmount=" + totalFraudApprovedAmount +
-                ", amountLimitAnalyzed='" + amountLimitAnalyzed + '\'' +
-                ", fpi=" + fpi +
-                ", analysisIntervalDays=" + analysisIntervalDays +
-                ", involvedCards=" + involvedCards +
-                ", blockedAndRevokedCards=" + blockedAndRevokedCards +
-                ", typeMerchant='" + typeMerchant + '\'' +
-                ", rule='" + rule + '\'' +
-                ", action='" + action + '\'' +
-                ", specialCase=" + specialCase +
-                ", score=" + score +
-                '}';
-    }
 }
+
+

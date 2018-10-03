@@ -1,6 +1,5 @@
 package com.hamidApp1.dao.pv.impl;
 
-import com.hamidApp1.dao.permissions.PermissionsDao;
 import com.hamidApp1.dao.pv.PvDao;
 import com.hamidApp1.dao.pv.PvQueryDao;
 import com.hamidApp1.model.pv.Pv;
