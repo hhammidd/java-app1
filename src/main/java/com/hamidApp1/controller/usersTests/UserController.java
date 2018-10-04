@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController()
+@RestController
+@RequestMapping("/usertest")
 public class UserController {
 
     @Autowired
@@ -23,4 +24,6 @@ public class UserController {
     public User findOne(@PathVariable long id) {
         return userService.findById(id);
     }
+
+
 }

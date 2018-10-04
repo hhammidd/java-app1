@@ -16,4 +16,9 @@ public class PvQueryDaoImpl implements PvQueryDao {
     public List<Pv> findAll() {
         return pvDao.findAll();
     }
+
+    @Override
+    public void savePv(Pv pvs) {
+        pvDao.save(pvs);
+    }
 }

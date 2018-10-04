@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface UsersGisServices {
     List<UsersGis> findAll();
+
+    void savePv(UsersGis pvs);
 }

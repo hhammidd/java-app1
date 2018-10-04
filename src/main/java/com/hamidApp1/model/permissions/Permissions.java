@@ -1,32 +1,32 @@
 package com.hamidApp1.model.permissions;
 
 import javax.persistence.*;
-
+import java.io.Serializable;
 
 @Entity
 @Table(name = "permissions")
-public class Permissions {
+public class Permissions implements Serializable {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_permission;
+    private int id_per;
     private String name;
     private String desc;
 
-    @Override
-    public String toString() {
-        return "Permissions{" +
-                "id_permission=" + id_permission +
-                ", name='" + name + '\'' +
-                ", desc='" + desc + '\'' +
-                '}';
+    public Permissions() {
     }
 
-    public int getId_permission() {
-        return id_permission;
+    public Permissions(int id_per, String name, String desc) {
+        this.id_per = id_per;
+        this.name = name;
+        this.desc = desc;
     }
 
-    public void setId_permission(int id_permission) {
-        this.id_permission = id_permission;
+    public int getId_per() {
+        return id_per;
+    }
+
+    public void setId_per(int id_per) {
+        this.id_per = id_per;
     }
 
     public String getName() {
@@ -43,5 +43,14 @@ public class Permissions {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    @Override
+    public String toString() {
+        return "Permissions{" +
+                "id_per=" + id_per +
+                ", name='" + name + '\'' +
+                ", desc='" + desc + '\'' +
+                '}';
     }
 }

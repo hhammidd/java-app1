@@ -1,9 +1,6 @@
 package com.hamidApp1.controller.istat;
 
-import com.hamidApp1.model.companies.Companies;
 import com.hamidApp1.model.istat.Istat_it;
-import com.hamidApp1.model.salesPoint.PvTest;
-import com.hamidApp1.service.companies.CompaniesService;
 import com.hamidApp1.service.istat.IstatItService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,5 +18,10 @@ public class IstatItController {
         return istatItService.findAll();
     }
 
+    @PostMapping(value = "/load")
+    public List<Istat_it> persist(@RequestBody final Istat_it pvs) {
+        istatItService.savePv(pvs);
+        return istatItService.findAll();
+    }
 
 }

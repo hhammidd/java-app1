@@ -1,7 +1,7 @@
 package com.hamidApp1.service.salePoint.impl;
 
 
-import com.hamidApp1.dao.SalePointDao;
+import com.hamidApp1.dao.salePoint.SalePointDao;
 import com.hamidApp1.model.salesPoint.PvTest;
 import com.hamidApp1.service.salePoint.SalePointService;
 import org.springframework.beans.factory.annotation.Autowired;

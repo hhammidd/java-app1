@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface PvQueryDao {
     List<Pv> findAll();
+
+    void savePv(Pv pvs);
 }

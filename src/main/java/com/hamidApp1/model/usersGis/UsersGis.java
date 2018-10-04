@@ -7,7 +7,7 @@ import java.io.Serializable;
 @Table(name = "usersgis")
 public class UsersGis implements Serializable {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    //@GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id_user;
     private int id_company;
     private int id_company_mGis;

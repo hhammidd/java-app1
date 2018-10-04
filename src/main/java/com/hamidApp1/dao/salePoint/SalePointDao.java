@@ -1,4 +1,4 @@
-package com.hamidApp1.dao;
+package com.hamidApp1.dao.salePoint;
 
 import com.hamidApp1.model.salesPoint.PvTest;
 import org.springframework.data.jpa.repository.JpaRepository;

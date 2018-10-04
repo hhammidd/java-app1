@@ -1,6 +1,6 @@
 package com.hamidApp1.dao.companies.impl;
 
-import com.hamidApp1.dao.companies.CompaniesDao;
+import com.hamidApp1.dao.companies.CompaniesQueryDao;
 import com.hamidApp1.model.companies.Companies;
 
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Component
-public class CompaniesDaoImpl implements CompaniesDao {
+public class CompaniesDaoImpl implements CompaniesQueryDao {
 
     @Override
     public List<Companies> findAll() {
@@ -26,4 +26,6 @@ public class CompaniesDaoImpl implements CompaniesDao {
         System.out.println("Done...");
         return usersRes;
     }
+
+
 }

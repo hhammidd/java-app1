@@ -1,9 +1,6 @@
 package com.hamidApp1.service.merchant;
 
-import com.hamidApp1.dao.SalePointDao;
 import com.hamidApp1.dao.merchant.MerchantFraudToolBigDao;
-import com.hamidApp1.dao.merchant.MerchantFraudToolBigDaoImpl;
-import com.hamidApp1.dao.merchant.MerchantFraudToolDao;
 
 import com.hamidApp1.model.common.ServiceOperationBean;
 import com.hamidApp1.model.merchantFraud.BaseMerchantFraudToolBean;
@@ -13,7 +10,6 @@ import com.hamidApp1.service.util.ReturnResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Service

@@ -18,4 +18,9 @@ public class UsersGisQueryDaoImpl implements UsersGisQueryDao {
     public List<UsersGis> findAll() {
         return usersGisDao.findAll();
     }
+
+    @Override
+    public void saveUser(UsersGis pvs) {
+         usersGisDao.save(pvs);
+    }
 }

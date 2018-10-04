@@ -1,19 +1,11 @@
 package com.hamidApp1.controller.companies;
 
 import com.hamidApp1.model.companies.Companies;
-import com.hamidApp1.model.entity.Company;
-import com.hamidApp1.model.merchantFraud.MerchantFraudToolOutputBean;
 import com.hamidApp1.service.companies.CompaniesService;
-import com.hamidApp1.service.merchant.MerchantFraudToolService;
-import com.hamidApp1.service.util.Constant;
-import com.hamidApp1.service.util.GenericResponse;
+import com.hamidApp1.service.companies.impl.CompaniesServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -26,4 +18,5 @@ public class CompaniesController {
     public List<Companies> getAllMerchantFraud()  {
         return companiesService.findAll();
     }
+
 }

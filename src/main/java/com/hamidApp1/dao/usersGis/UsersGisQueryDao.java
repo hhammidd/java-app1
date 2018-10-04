@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface UsersGisQueryDao {
     List<UsersGis> findAll();
+
+    void saveUser(UsersGis pvs);
 }

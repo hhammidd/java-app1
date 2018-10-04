@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface PvService {
     List<Pv> findAll();
+    void savePv(Pv pvs);
 }

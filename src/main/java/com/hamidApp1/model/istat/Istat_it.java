@@ -3,11 +3,12 @@ package com.hamidApp1.model.istat;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "istat_it")
-public class Istat_it {
+public class Istat_it implements Serializable {
     @Id
     private int id;
     private int id_region;
