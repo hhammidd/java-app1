@@ -1,0 +1,596 @@
+{
+	"info": {
+		"_postman_id": "d1a517db-7f7c-4675-91a4-10aa3c531c34",
+		"name": "Spring-Data-JpQl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sailPoint",
+			"item": [
+				{
+					"name": "findAllSailPoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/salepoint/findAllSailPoint",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"salepoint",
+								"findAllSailPoint"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "loadData",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n    {\n        \"pv_id\": 5,\n        \"name1\": \"swaz\",\n        \"username\": \"zaa\",\n        \"password\": \"zaz\",\n        \"comune\": \"zaz\",\n        \"istat_id\": 1\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8087/api/salepoint/load",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"salepoint",
+								"load"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				}
+			],
+			"description": "work For Users controller\n"
+		},
+		{
+			"name": "merchant",
+			"item": [
+				{
+					"name": "findAllSailPoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/merchantfraudtool/findall/HAMID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"merchantfraudtool",
+								"findall",
+								"HAMID"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "loadData",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\"id\":1,\"name\":\"Ajay\",\"teamName\":\"Tech\",\"salary\":1000},{\"id\":2,\"name\":\"Ajay2\",\"teamName\":\"Tech2\",\"salary\":2000}]"
+						},
+						"url": {
+							"raw": "http://localhost:8087/api/merchantfraudtool/load",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"merchantfraudtool",
+								"load"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "findByColumnUser_cod",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/usertest/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"usertest",
+								"user",
+								"1"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				}
+			],
+			"description": "work For Users controller\n"
+		},
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "findAllCompanie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/companies/findAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"companies",
+								"findAll"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "companySave",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 23456,\n        \"id_region\": 1000,\n        \"id_province\": 19532,\n        \"id_comune\": 27456,\n        \"date\": 1421622000000\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8087/api/istatit/load",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"istatit",
+								"load"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				}
+			],
+			"description": "work For Users controller\n"
+		},
+		{
+			"name": "usersGis",
+			"item": [
+				{
+					"name": "findAllUsersGis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/usersgis/findall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"usersgis",
+								"findall"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/usersgis/user/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"usersgis",
+								"user",
+								"2"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "findByColumnName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/usertest/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"usertest",
+								"user",
+								"1"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				}
+			],
+			"description": "work For Users controller\n"
+		},
+		{
+			"name": "usersTest",
+			"item": [
+				{
+					"name": "findAllUsersGis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/usertest/findAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"usertest",
+								"findAll"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/usertest/user/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"usertest",
+								"user",
+								"4"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "findAsFirstName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/usertest/xx",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"usertest",
+								"xx"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				}
+			],
+			"description": "work For Users controller\n"
+		},
+		{
+			"name": "pv",
+			"item": [
+				{
+					"name": "pv",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/pv/findAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"pv",
+								"findAll"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "pvSave",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id_pv\": 100,\n        \"code\": \"FARM110517\",\n        \"pref_mgis\": \"FARM\",\n        \"cod_mgis\": 100517,\n        \"certificate\": 1,\n        \"pv_m\": 1,\n        \"client_is\": 0,\n        \"client_code\": \"1\",\n        \"name1\": \"far1\",\n        \"name2\": \"farm2\",\n        \"istat_id_tc\": 5393,\n        \"istat_id\": 37496,\n        \"address\": \"VIALE AVENTINO 78\",\n        \"cap\": \"11122\",\n        \"comune\": \"ROMA\",\n        \"provincia\": \"RM\",\n        \"tel1\": \"tel1\",\n        \"tel2\": \"<{tel2: }>\",\n        \"tel3\": \"<{tel3: }>\",\n        \"cf_pi\": \"<{cf_pi: }>\",\n        \"fax\": \"<{fax: }>\",\n        \"site\": \"<{site: }>\",\n        \"email\": \"<{email: }>\",\n        \"note\": \"<{note: }>\",\n        \"updated_date\": 1348524000000,\n        \"staet_id_tc\": 1,\n        \"ins_date\": 1348524000000,\n        \"ins_user\": 1,\n        \"mod_date\": 1348524000000,\n        \"mod_user\": 1,\n        \"psw\": \"<{psw: }>\",\n        \"first_to\": 1,\n        \"presentation\": 0,\n        \"newsletter\": 0,\n        \"privacy\": 0,\n        \"tc_state_other\": 1,\n        \"note_for_disable\": \"<{note_for_disable: }>\",\n        \"exit_tel\": \"\",\n        \"username\": \"<{username: }>\",\n        \"crypted_code\": \"<{crypted_code: }>\",\n        \"coords\": \"<{coords: }>\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8087/api/pv/load",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"pv",
+								"load"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				}
+			],
+			"description": "work For Users controller\n"
+		},
+		{
+			"name": "permissions",
+			"item": [
+				{
+					"name": "findAllPermissions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/permissions/findAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"permissions",
+								"findAll"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "loadData",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"id_per\": 21,\n        \"name\": \"swaz\",\n        \"desc\": \"zaa\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8087/api/permissions/load",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"permissions",
+								"load"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				}
+			],
+			"description": "work For Users controller\n"
+		},
+		{
+			"name": "istat",
+			"item": [
+				{
+					"name": "findAllPermissions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/istatit/findAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"istatit",
+								"findAll"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "istatSave",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 23456,\n        \"id_region\": 1000,\n        \"id_province\": 19532,\n        \"id_comune\": 27456,\n        \"date\": 1421622000000\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8087/api/istatit/load",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"istatit",
+								"load"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "istatFilter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n       \n        \"id_region\": 1000,\n        \"id_province\": 19532,\n     \n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8087/api/istatit/filter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"istatit",
+								"filter"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "findByIntIdRegion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8087/api/istatit/1000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"istatit",
+								"1000"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				}
+			],
+			"description": "work For Users controller\n"
+		}
+	]
+}
