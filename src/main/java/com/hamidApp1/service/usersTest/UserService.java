@@ -7,5 +7,5 @@ import java.util.List;
 public interface UserService {
     public List<User> findAll();
     public User findById(long id);
-    public User findByFirstName(String firstName);
+    public List<User> findByFirstName(String firstName);
 }

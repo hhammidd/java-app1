@@ -8,4 +8,8 @@ public interface UsersGisQueryDao {
     List<UsersGis> findAll();
 
     void saveUser(UsersGis pvs);
+
+    UsersGis findById(int id_user);
+
+    List<UsersGis> findByUserName(String user_name);
 }

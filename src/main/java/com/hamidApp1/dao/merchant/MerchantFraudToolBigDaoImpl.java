@@ -4,10 +4,7 @@ import com.hamidApp1.model.merchantFraud.BaseMerchantFraudToolBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.util.List;
 
 @Component
@@ -15,6 +12,7 @@ public class MerchantFraudToolBigDaoImpl implements MerchantFraudToolBigDao {
 
     @Autowired
     private MerchantFraudToolDao merchantFraudToolDao;
+
 
     @Override
     public List<BaseMerchantFraudToolBean> findAll() {
@@ -32,5 +30,10 @@ public class MerchantFraudToolBigDaoImpl implements MerchantFraudToolBigDao {
         em.getTransaction().commit();
         System.out.println("Done...");
 
+    }
+
+    @Override
+    public List<BaseMerchantFraudToolBean> findByString(String USER_COD) {
+        return merchantFraudToolDao.findOne(USER_COD);
     }
 }

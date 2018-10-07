@@ -1,10 +1,14 @@
 package com.hamidApp1.controller.istat;
 
 import com.hamidApp1.model.istat.Istat_it;
+import com.hamidApp1.model.istat.Istat_it_filter;
+import com.hamidApp1.model.merchantFraud.BaseMerchantFraudToolBean;
 import com.hamidApp1.service.istat.IstatItService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -24,4 +28,16 @@ public class IstatItController {
         return istatItService.findAll();
     }
 
+    @RequestMapping(value = "/{id_region}", method = RequestMethod.GET)
+    public List<Istat_it> getAll(@PathVariable("id_region") int id_region) {
+        return istatItService.findByidRegion(id_region);
+    }
+
+    @RequestMapping(value = "/filter", method = RequestMethod.POST)
+    public List<Istat_it> getHistMailList(
+            @RequestBody @Valid Istat_it_filter input) throws SQLException {
+            return istatItService.getHistMailList(input);
+
+
+    }
 }

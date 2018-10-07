@@ -2,6 +2,7 @@ package com.hamidApp1.controller.merchant;
 
 import com.hamidApp1.model.merchantFraud.BaseMerchantFraudToolBean;
 import com.hamidApp1.model.merchantFraud.MerchantFraudToolOutputBean;
+import com.hamidApp1.model.usersGis.UsersGis;
 import com.hamidApp1.service.merchant.MerchantFToolService;
 
 import com.hamidApp1.service.merchant.MerchantFraudToolService;
@@ -15,12 +16,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/merchantFraudTool")
+@RequestMapping("/merchantfraudtool")
 public class MerchantFToolControllers {
     @Autowired
     private MerchantFraudToolService merchantService;
 
-    @GetMapping(value = "/findAll/{userCod}")
+    @GetMapping(value = "/findall/{userCod}")
     public GenericResponse<MerchantFraudToolOutputBean> getAllMerchantFraud(@PathVariable final String userCod) throws SQLException{
 
         MerchantFraudToolOutputBean merchantOutputBean =  null;
@@ -32,6 +33,11 @@ public class MerchantFToolControllers {
         } else {
             return new GenericResponse<>(merchantOutputBean,Constant.SUCCESS_M,Constant.SUCCESS);
         }
+    }
+
+    @RequestMapping(value = "/{USER_COD}", method = RequestMethod.GET)
+    public List<BaseMerchantFraudToolBean> getAll(@PathVariable("USER_COD") String USER_COD) {
+        return merchantService.findByUserCode(USER_COD);
     }
 
 

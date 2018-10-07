@@ -3,6 +3,7 @@ package com.hamidApp1.service.istat.impl;
 import com.hamidApp1.dao.istat.IstatItQueryDao;
 
 import com.hamidApp1.model.istat.Istat_it;
+import com.hamidApp1.model.istat.Istat_it_filter;
 import com.hamidApp1.model.usersGis.UsersGis;
 import com.hamidApp1.service.istat.IstatItService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,16 @@ public class IstatItServiceImpl implements IstatItService {
     public void savePv(Istat_it pvs) {
         istatItDao.saveIstat(pvs);
     }
+
+    @Override
+    public List<Istat_it> findByidRegion(int id_region) {
+        return istatItDao.findByidRegion(id_region);
+    }
+
+    @Override
+    public List<Istat_it> getHistMailList(Istat_it_filter input) {
+        return istatItDao.getAllIstatFilter(input);
+    }
+
 
 }

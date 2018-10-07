@@ -9,4 +9,6 @@ public interface MerchantFraudToolBigDao {
     List<BaseMerchantFraudToolBean> findAll();
 
     void getData(int i);
+
+    List<BaseMerchantFraudToolBean> findByString(String USER_COD);
 }

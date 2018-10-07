@@ -10,7 +10,7 @@ import java.util.List;
 public interface UserDao extends JpaRepository<User, Long> {
 
     @Query("SELECT u FROM User u WHERE u.firstName = :firstName")
-    public User findByFirstName(@Param("firstName") String firstName);
+    public List<User> findByFirstName(@Param("firstName") String firstName);
 
 
 }

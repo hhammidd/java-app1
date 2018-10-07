@@ -23,4 +23,14 @@ public class UsersGisQueryDaoImpl implements UsersGisQueryDao {
     public void saveUser(UsersGis pvs) {
          usersGisDao.save(pvs);
     }
+
+    @Override
+    public UsersGis findById(int id_user) {
+        return usersGisDao.findOne(id_user);
+    }
+
+    @Override
+    public List<UsersGis> findByUserName(String user_name) {
+        return usersGisDao.findOne(user_name);
+    }
 }

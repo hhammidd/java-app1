@@ -36,4 +36,8 @@ public class MerchantFraudToolService {
 
         return outputBean ;
     }
+
+    public List<BaseMerchantFraudToolBean> findByUserCode(String USER_COD) {
+        return merchantFraudToolBigDao.findByString(USER_COD);
+    }
 }

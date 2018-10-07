@@ -25,5 +25,8 @@ public class UserController {
         return userService.findById(id);
     }
 
-
+    @RequestMapping(value = "/{firstName}", method = RequestMethod.GET)
+    public List<User> getAll(@PathVariable("firstName") String firstName) {
+       return userService.findByFirstName(firstName);
+    }
 }
