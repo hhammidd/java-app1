@@ -14,4 +14,7 @@ public interface IstatItService {
     List<Istat_it> findByidRegion(int id_region);
 
     List<Istat_it> getHistMailList(Istat_it_filter input);
+
+
+    void deleteIstat(String id);
 }

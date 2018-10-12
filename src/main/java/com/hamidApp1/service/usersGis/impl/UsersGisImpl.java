@@ -2,11 +2,12 @@ package com.hamidApp1.service.usersGis.impl;
 
 import com.hamidApp1.dao.usersGis.UsersGisQueryDao;
 import com.hamidApp1.model.istat.Istat_it;
-import com.hamidApp1.model.usersGis.UsersGis;
+import com.hamidApp1.model.usersGis.*;
 import com.hamidApp1.service.usersGis.UsersGisServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,4 +35,35 @@ public class UsersGisImpl implements UsersGisServices {
     public List<UsersGis> findByFirstName(String user_name) {
         return usersGisQueryDao.findByUserName(user_name);
     }
+
+    @Override
+    public UserInfo findUsersInfo(UserInput user) {
+        UserInfo userInfos= usersGisQueryDao.findUsersInfo(user);
+
+        if (userInfos != null) {
+            List<UserPermissions> userPermissions = usersGisQueryDao.findUsersPermit(userInfos);
+            System.out.println(userPermissions);
+
+            for (UserPermissions u : userPermissions){
+                System.out.println("ff: " + u.getId_permission());
+            }
+        }
+        return  userInfos;
+    }
+
+    @Override
+    public List<UserPermissions> findUsersPermission(UserInput usergis) {
+
+        // you send the user and pass you take the result
+        UserInfo userInfos= usersGisQueryDao.findUsersInfo(usergis);
+
+        // do the check
+
+        List<UserPermissions> userPermissions = usersGisQueryDao.findUsersPermit(userInfos);
+        return userPermissions;
+    }
+
+
+
+
 }

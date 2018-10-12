@@ -18,4 +18,6 @@ public class CompaniesServiceImpl implements CompaniesService {
         return companiesDao.findAll();
     }
 
+
+
 }

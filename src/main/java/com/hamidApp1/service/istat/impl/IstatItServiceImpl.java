@@ -9,6 +9,9 @@ import com.hamidApp1.service.istat.IstatItService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -33,6 +36,13 @@ public class IstatItServiceImpl implements IstatItService {
     @Override
     public List<Istat_it> getHistMailList(Istat_it_filter input) {
         return istatItDao.getAllIstatFilter(input);
+    }
+
+
+
+    @Override
+    public void deleteIstat(String id) {
+        istatItDao.removeIf(id);
     }
 
 

@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class Companies implements Serializable {
 
     @Id
-    //@GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id_company;
     private String name_company;
 

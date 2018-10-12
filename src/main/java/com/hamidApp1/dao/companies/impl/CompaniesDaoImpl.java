@@ -26,6 +26,4 @@ public class CompaniesDaoImpl implements CompaniesQueryDao {
         System.out.println("Done...");
         return usersRes;
     }
-
-
 }

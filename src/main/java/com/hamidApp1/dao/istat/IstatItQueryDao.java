@@ -13,4 +13,6 @@ public interface IstatItQueryDao {
     List<Istat_it> findByidRegion(int id_region);
 
     List<Istat_it> getAllIstatFilter(Istat_it_filter input);
+
+    void removeIf(String id);
 }

@@ -17,7 +17,7 @@ public class IstatItController {
     @Autowired
     private IstatItService istatItService;
 
-    @GetMapping(value = "/findAll")
+    @GetMapping(value = "/findall")
     public List<Istat_it> getAllMerchantFraud()  {
         return istatItService.findAll();
     }
@@ -37,7 +37,18 @@ public class IstatItController {
     public List<Istat_it> getHistMailList(
             @RequestBody @Valid Istat_it_filter input) throws SQLException {
             return istatItService.getHistMailList(input);
-
-
     }
+
+    //put
+    @RequestMapping(method = RequestMethod.PUT , value = "/findall/{id}")
+    public void updateIstat(@PathVariable String id){
+        istatItService.deleteIstat(id);
+    }
+    //delete
+    @RequestMapping(method = RequestMethod.DELETE , value = "/findall/{id}")
+    public void deleteIstat(@PathVariable String id){
+        istatItService.deleteIstat(id);
+    }
+
+
 }

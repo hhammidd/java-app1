@@ -4,7 +4,6 @@ import com.hamidApp1.dao.istat.IstatItDao;
 import com.hamidApp1.dao.istat.IstatItQueryDao;
 import com.hamidApp1.model.istat.Istat_it;
 import com.hamidApp1.model.istat.Istat_it_filter;
-import com.hamidApp1.model.merchantFraud.BaseMerchantFraudToolBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -40,7 +40,10 @@ public class IstatItQueryDaoImpl implements IstatItQueryDao {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("User");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        TypedQuery<Istat_it> usersQuery = em.createQuery("SELECT u FROM com.hamidApp1.model.istat.Istat_it u WHERE id_province = " + input.getId_province() +" AND id_region = " + input.getId_region() , Istat_it.class);
+
+        String usersQueryStr = "SELECT u FROM com.hamidApp1.model.istat.Istat_it u WHERE id_province = " + input.getId_province() +" AND id_region = " + input.getId_region();
+        System.out.println("user: " + usersQueryStr);
+        TypedQuery<Istat_it> usersQuery = em.createQuery(usersQueryStr, Istat_it.class);
         System.out.println("user: " + usersQuery);
         List<Istat_it> usersRes = usersQuery.getResultList();
 
@@ -48,5 +51,14 @@ public class IstatItQueryDaoImpl implements IstatItQueryDao {
         return usersRes;
     }
 
+    @Override
+    public void removeIf(String id) {
+        List<Istat_it> istatList = new ArrayList<>();
+        istatList = istatItDao.findAll();
 
-}
+        System.out.println("Not completerd ");
+
+    }
+        }
+
+
