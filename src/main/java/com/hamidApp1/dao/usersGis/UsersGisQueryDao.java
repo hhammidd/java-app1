@@ -17,4 +17,5 @@ public interface UsersGisQueryDao {
 
 
     List<UserPermissions> findUsersPermit(UserInfo up);
+
 }

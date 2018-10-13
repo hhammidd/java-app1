@@ -1,9 +1,6 @@
 package com.hamidApp1.service.usersGis;
 
-import com.hamidApp1.model.usersGis.UserInfo;
-import com.hamidApp1.model.usersGis.UserInput;
-import com.hamidApp1.model.usersGis.UserPermissions;
-import com.hamidApp1.model.usersGis.UsersGis;
+import com.hamidApp1.model.usersGis.*;
 
 import java.util.List;
 
@@ -19,4 +16,5 @@ public interface UsersGisServices {
     UserInfo findUsersInfo(UserInput user);
 
     List<UserPermissions> findUsersPermission(UserInput usergis);
+    UserLists findUserInfo(UserInput usergis);
 }

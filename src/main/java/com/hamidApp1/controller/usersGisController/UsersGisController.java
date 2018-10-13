@@ -5,13 +5,11 @@ import com.hamidApp1.model.permissions.Permissions;
 import com.hamidApp1.model.pv.Pv;
 import com.hamidApp1.model.pv.PvRegComFilter;
 import com.hamidApp1.model.users.User;
-import com.hamidApp1.model.usersGis.UserInfo;
-import com.hamidApp1.model.usersGis.UserInput;
-import com.hamidApp1.model.usersGis.UserPermissions;
-import com.hamidApp1.model.usersGis.UsersGis;
+import com.hamidApp1.model.usersGis.*;
 import com.hamidApp1.service.usersGis.UsersGisServices;
 import com.hamidApp1.service.util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -24,6 +22,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/usersgis")
 public class UsersGisController {
+
 
         @Autowired
         private UsersGisServices usersGisServices;
@@ -64,5 +63,32 @@ public class UsersGisController {
                 //TODO do the decrypt
                 return usersGisServices.findUsersPermission(usergis);
         }
+
+        @RequestMapping(value = "/permissionslist", method = RequestMethod.POST)
+        public Map<String,Object> loginPermissionList(@RequestBody @Valid UserInput usergis) {
+                Map<String, Object> tokenMap = null;
+                String token = null;
+                UserLists u = null;
+                tokenMap = new HashMap<>();
+
+                BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+                String secretKey = null;
+                secretKey = Util.getJwtsSecretKey();
+
+                if ()
+
+                u = usersGisServices.findUserInfo(usergis);
+
+                if (u != null){
+                   String userPass
+                }
+
+                token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJIQU1JRCIsInJvbGUiOi";
+                tokenMap.put("token", token);
+                tokenMap.put("user", u);
+                return tokenMap;
+        }
+
+
 }
 

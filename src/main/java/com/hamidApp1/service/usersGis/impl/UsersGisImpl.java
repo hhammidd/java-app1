@@ -60,10 +60,39 @@ public class UsersGisImpl implements UsersGisServices {
         // do the check
 
         List<UserPermissions> userPermissions = usersGisQueryDao.findUsersPermit(userInfos);
+
+        UserPermit objSection = new UserPermit();
+
         return userPermissions;
     }
 
+    @Override
+    public UserLists findUserInfo(UserInput usergis) {
+        UserLists userTotInfoObj = new UserLists();
 
+        UserPermitList userObj = null;
+        ArrayList<UserPermitList> userPermitLists = new ArrayList<UserPermitList>();
 
+        UserInfo userInfos= usersGisQueryDao.findUsersInfo(usergis);
 
+        List<UserPermissions> userPermissions = usersGisQueryDao.findUsersPermit(userInfos);
+        //
+
+        for (UserPermissions up : userPermissions){
+            userObj = new UserPermitList();
+            userObj.setId_permission(up.getId_permission());
+            userObj.setName(up.getName());
+            userPermitLists.add(userObj);
+        }
+        //userPermitLists.add(userObj);
+
+        userTotInfoObj.setAdministrator(userInfos.getAdministrator());
+        userTotInfoObj.setId_company(userInfos.getId_company());
+        userTotInfoObj.setId_company_mGis(userInfos.getId_company());
+        userTotInfoObj.setId_user(userInfos.getId_user());
+        userTotInfoObj.setPassword(userInfos.getPassword());
+        userTotInfoObj.setUserPermitLists(userPermitLists);
+        // Take the permits in the UserPermitList
+        return userTotInfoObj;
+    }
 }
