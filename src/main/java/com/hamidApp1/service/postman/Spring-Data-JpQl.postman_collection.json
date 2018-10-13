@@ -125,7 +125,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:8087/api/usertest/user/1",
+							"raw": "http://localhost:8087/api/merchantfraudtool/HAMID1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -133,9 +133,8 @@
 							"port": "8087",
 							"path": [
 								"api",
-								"usertest",
-								"user",
-								"1"
+								"merchantfraudtool",
+								"HAMID1"
 							]
 						},
 						"description": "This is the users "
@@ -262,7 +261,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:8087/api/usertest/user/1",
+							"raw": "http://localhost:8087/api/usersgis/hamid",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -270,9 +269,101 @@
 							"port": "8087",
 							"path": [
 								"api",
-								"usertest",
-								"user",
-								"1"
+								"usersgis",
+								"hamid"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 23456,\n        \"id_region\": 1000,\n        \"id_province\": 19532,\n        \"id_comune\": 27456,\n        \"date\": 1421622000000\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8087/api/istatit/load",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"istatit",
+								"load"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "loginPermission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n        \"user_name\": \"fd\",\n        \"password\": \"fdfdf\"\n    }\n    "
+						},
+						"url": {
+							"raw": "http://localhost:8087/api/usersgis/permissions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"usersgis",
+								"permissions"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
+				},
+				{
+					"name": "permissionList",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n        \"user_name\": \"fd\",\n        \"password\": \"fdfdf\"\n    }\n    "
+						},
+						"url": {
+							"raw": "http://localhost:8087/api/usersgis/permissions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"usersgis",
+								"permissions"
 							]
 						},
 						"description": "This is the users "
@@ -414,6 +505,37 @@
 						"description": "This is the users "
 					},
 					"response": []
+				},
+				{
+					"name": "PvFilter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n       \n        \"cap\": \"11122\",\n        \"comune\": \"ROMA\",\n        \"provincia\": \"RM\"\n        \n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8087/api/pv/filter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"pv",
+								"filter"
+							]
+						},
+						"description": "This is the users "
+					},
+					"response": []
 				}
 			],
 			"description": "work For Users controller\n"
@@ -488,7 +610,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:8087/api/istatit/findAll",
+							"raw": "http://localhost:8087/api/istatit/findall",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -497,7 +619,7 @@
 							"path": [
 								"api",
 								"istatit",
-								"findAll"
+								"findall"
 							]
 						},
 						"description": "This is the users "
