@@ -14,32 +14,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `alien`
---
-
-DROP TABLE IF EXISTS `alien`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `alien` (
-  `aid` int(11) NOT NULL,
-  `aname` varchar(255) DEFAULT NULL,
-  `tech` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`aid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `alien`
---
-
-LOCK TABLES `alien` WRITE;
-/*!40000 ALTER TABLE `alien` DISABLE KEYS */;
-INSERT INTO `alien` VALUES (1,'hamid','java');
-/*!40000 ALTER TABLE `alien` ENABLE KEYS */;
-UNLOCK TABLES;
-
 --
 -- Table structure for table `companies`
 --
@@ -51,7 +25,7 @@ CREATE TABLE `companies` (
   `id_company` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name_company` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_company`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,62 +42,6 @@ UNLOCK TABLES;
 -- Table structure for table `company`
 --
 
-DROP TABLE IF EXISTS `company`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `company` (
-  `azienda_id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome_azienda` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`azienda_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `company`
---
-
-LOCK TABLES `company` WRITE;
-/*!40000 ALTER TABLE `company` DISABLE KEYS */;
-INSERT INTO `company` VALUES (1,'be'),(2,'solution');
-/*!40000 ALTER TABLE `company` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dbmmas`
---
-
-DROP TABLE IF EXISTS `dbmmas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `dbmmas` (
-  `db_id` int(11) NOT NULL AUTO_INCREMENT,
-  `censimento` int(11) NOT NULL,
-  `custom` int(11) NOT NULL,
-  `ins_data` datetime(6) DEFAULT NULL,
-  `ins_utente` int(11) NOT NULL,
-  `mod_utente` int(11) NOT NULL,
-  `mode_data` datetime(6) DEFAULT NULL,
-  `nazione_id` int(11) NOT NULL,
-  `nome_db` varchar(255) DEFAULT NULL,
-  `nome_pers` varchar(255) DEFAULT NULL,
-  `versione` int(11) NOT NULL,
-  PRIMARY KEY (`db_id`),
-  UNIQUE KEY `UK_l3v74prcs6apd02otcqnh57p5` (`nome_db`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dbmmas`
---
-
-LOCK TABLES `dbmmas` WRITE;
-/*!40000 ALTER TABLE `dbmmas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbmmas` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `frmhuser`
---
 
 DROP TABLE IF EXISTS `frmhuser`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -138,7 +56,7 @@ CREATE TABLE `frmhuser` (
   `USRPHONE` varchar(10) DEFAULT NULL,
   `USREMAILADDR` varchar(10) DEFAULT NULL,
   `USRSHORTNAME` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,31 +69,7 @@ INSERT INTO `frmhuser` VALUES ('GIAC','HAMID1','0b14d501a594442a01c6859541bcb3e8
 /*!40000 ALTER TABLE `frmhuser` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `hibernate_sequence`
---
 
-DROP TABLE IF EXISTS `hibernate_sequence`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `hibernate_sequence` (
-  `next_val` bigint(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `hibernate_sequence`
---
-
-LOCK TABLES `hibernate_sequence` WRITE;
-/*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (1);
-/*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `istat_it`
---
 
 DROP TABLE IF EXISTS `istat_it`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -188,7 +82,7 @@ CREATE TABLE `istat_it` (
   `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   UNIQUE KEY `comune_id` (`id_comune`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,32 +95,7 @@ INSERT INTO `istat_it` VALUES (23456,1000,19532,27456,'2015-01-19 00:00:00'),(27
 /*!40000 ALTER TABLE `istat_it` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `laptop`
---
 
-DROP TABLE IF EXISTS `laptop`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `laptop` (
-  `lid` int(11) NOT NULL,
-  `lname` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`lid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `laptop`
---
-
-LOCK TABLES `laptop` WRITE;
-/*!40000 ALTER TABLE `laptop` DISABLE KEYS */;
-INSERT INTO `laptop` VALUES (2,NULL);
-/*!40000 ALTER TABLE `laptop` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `merchant_fraud_history`
 --
 
 DROP TABLE IF EXISTS `merchant_fraud_history`;
@@ -254,7 +123,7 @@ CREATE TABLE `merchant_fraud_history` (
   `ACTION` varchar(50) DEFAULT NULL,
   `SPECIAL_CASE` varchar(2) DEFAULT NULL,
   `SCORE_POINT` decimal(10,0) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -279,7 +148,7 @@ CREATE TABLE `merchantfraud` (
   `username` varchar(20) DEFAULT NULL,
   `password` varchar(20) DEFAULT NULL,
   `firstName` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -304,7 +173,7 @@ CREATE TABLE `permesso` (
   `descrizione` varchar(255) DEFAULT NULL,
   `nome` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`permesso_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -328,7 +197,7 @@ CREATE TABLE `permissionlist` (
   `id_permissions` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_permissions`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -349,11 +218,11 @@ DROP TABLE IF EXISTS `permissions`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `permissions` (
   `id_permission` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `desc` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `desc` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_per` int(11) NOT NULL,
   PRIMARY KEY (`id_permission`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -368,29 +237,6 @@ UNLOCK TABLES;
 
 --
 -- Table structure for table `product`
---
-
-DROP TABLE IF EXISTS `product`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `product` (
-  `id` int(11) DEFAULT NULL,
-  `name` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `product`
---
-
-LOCK TABLES `product` WRITE;
-/*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'TV'),(2,'Radio'),(3,'PC');
-/*!40000 ALTER TABLE `product` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pv`
 --
 
 DROP TABLE IF EXISTS `pv`;
@@ -452,90 +298,8 @@ INSERT INTO `pv` VALUES (1,'FARM100517','FARM',100517,1,1,0,'1','far1','farm2',5
 /*!40000 ALTER TABLE `pv` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `pvtest`
---
 
-DROP TABLE IF EXISTS `pvtest`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `pvtest` (
-  `pv_id` int(11) NOT NULL,
-  `name1` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `username` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `comune` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `istat_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`pv_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `pvtest`
---
-
-LOCK TABLES `pvtest` WRITE;
-/*!40000 ALTER TABLE `pvtest` DISABLE KEYS */;
-INSERT INTO `pvtest` VALUES (0,NULL,NULL,NULL,NULL,0),(1,'zaz','zaa','zaz','zaz',1),(2,'swaz','zaa','zaz','zaz',1),(3,'swaz','zaa','zaz','zaz',1),(4,'swaz','zaa','zaz','zaz',1),(5,'swaz','zaa','zaz','zaz',1),(1000,NULL,NULL,NULL,NULL,0);
-/*!40000 ALTER TABLE `pvtest` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `rel_ruolo_permesso`
---
-
-DROP TABLE IF EXISTS `rel_ruolo_permesso`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `rel_ruolo_permesso` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `permesso_id` int(11) DEFAULT NULL,
-  `ruolo_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK4kkpqjsc2kup0dgfucjvyatpo` (`permesso_id`),
-  KEY `FKt4im4kq23yuh61b7gpxatdtiy` (`ruolo_id`),
-  CONSTRAINT `FK4kkpqjsc2kup0dgfucjvyatpo` FOREIGN KEY (`permesso_id`) REFERENCES `permesso` (`permesso_id`),
-  CONSTRAINT `FKt4im4kq23yuh61b7gpxatdtiy` FOREIGN KEY (`ruolo_id`) REFERENCES `ruolo` (`ruolo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `rel_ruolo_permesso`
---
-
-LOCK TABLES `rel_ruolo_permesso` WRITE;
-/*!40000 ALTER TABLE `rel_ruolo_permesso` DISABLE KEYS */;
-/*!40000 ALTER TABLE `rel_ruolo_permesso` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `rel_utente_dbmmas`
---
-
-DROP TABLE IF EXISTS `rel_utente_dbmmas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `rel_utente_dbmmas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `expire` varchar(255) DEFAULT NULL,
-  `db_id` int(11) DEFAULT NULL,
-  `utente_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FKd84ewovm82vs1t8xitpnj95oy` (`db_id`),
-  KEY `FKly35m5s9ddhyjlb3jap5gy1dk` (`utente_id`),
-  CONSTRAINT `FKd84ewovm82vs1t8xitpnj95oy` FOREIGN KEY (`db_id`) REFERENCES `dbmmas` (`db_id`),
-  CONSTRAINT `FKly35m5s9ddhyjlb3jap5gy1dk` FOREIGN KEY (`utente_id`) REFERENCES `users` (`utente_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `rel_utente_dbmmas`
---
-
-LOCK TABLES `rel_utente_dbmmas` WRITE;
-/*!40000 ALTER TABLE `rel_utente_dbmmas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `rel_utente_dbmmas` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `rules`
@@ -554,7 +318,7 @@ CREATE TABLE `rules` (
   KEY `ruolo_FK_azienda_idx` (`id_company`),
   CONSTRAINT `rule_FK_companies` FOREIGN KEY (`id_company`) REFERENCES `companies` (`id_company`),
   CONSTRAINT `rule_FK_insutente` FOREIGN KEY (`user_ins`) REFERENCES `usersgis` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=371 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=371 DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -583,7 +347,7 @@ CREATE TABLE `rules_permissions` (
   KEY `ruoli_permessi_FK_ruolo_idx` (`id_rule`) USING BTREE,
   CONSTRAINT `ruoli_permessi_FK_permesso` FOREIGN KEY (`id_permissions`) REFERENCES `permissions` (`id_permission`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `ruoli_permessi_FK_ruolo` FOREIGN KEY (`id_rule`) REFERENCES `rules` (`id_rule`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7808 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7808 DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -600,58 +364,9 @@ UNLOCK TABLES;
 -- Table structure for table `ruolo`
 --
 
-DROP TABLE IF EXISTS `ruolo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `ruolo` (
-  `ruolo_id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) DEFAULT NULL,
-  `azienda_id` int(11) DEFAULT NULL,
-  `ins_utente` int(11) DEFAULT NULL,
-  PRIMARY KEY (`ruolo_id`),
-  KEY `FKdslu1evf5xh79n8jas8e986mn` (`azienda_id`),
-  KEY `FKk7iksokpfc3kdcd8k93l777ly` (`ins_utente`),
-  CONSTRAINT `FKdslu1evf5xh79n8jas8e986mn` FOREIGN KEY (`azienda_id`) REFERENCES `company` (`azienda_id`),
-  CONSTRAINT `FKk7iksokpfc3kdcd8k93l777ly` FOREIGN KEY (`ins_utente`) REFERENCES `users` (`utente_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `ruolo`
---
 
-LOCK TABLES `ruolo` WRITE;
-/*!40000 ALTER TABLE `ruolo` DISABLE KEYS */;
-INSERT INTO `ruolo` VALUES (1,'here',1,1),(2,'ruolo2',2,2);
-/*!40000 ALTER TABLE `ruolo` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `student`
---
-
-DROP TABLE IF EXISTS `student`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `student` (
-  `rollno` int(11) NOT NULL,
-  `marks` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `laptop_lid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`rollno`),
-  KEY `FKbt5lbpcekxv81bs28nm4odw71` (`laptop_lid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `student`
---
-
-LOCK TABLES `student` WRITE;
-/*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'110','hamid',2);
-/*!40000 ALTER TABLE `student` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `user_table`
@@ -666,7 +381,7 @@ CREATE TABLE `user_table` (
   `password` varchar(20) DEFAULT NULL,
   `firstName` varchar(20) DEFAULT NULL,
   `lastName` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -694,7 +409,7 @@ CREATE TABLE `userinfo` (
   `password` varchar(255) DEFAULT NULL,
   `user_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`name_company`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -717,7 +432,7 @@ CREATE TABLE `userinput` (
   `user_name` varchar(255) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -747,7 +462,7 @@ CREATE TABLE `userlists` (
   `user_name` varchar(255) DEFAULT NULL,
   `users_ins` int(11) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -775,7 +490,7 @@ CREATE TABLE `userpermissions` (
   `name` varchar(255) DEFAULT NULL,
   `user_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`administrator`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -798,7 +513,7 @@ CREATE TABLE `userpermit` (
   `id_permission` int(11) NOT NULL,
   `portfolioCreListBean` tinyblob,
   PRIMARY KEY (`id_permission`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -821,7 +536,7 @@ CREATE TABLE `userpermitlist` (
   `id_permission` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_permission`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -837,34 +552,7 @@ UNLOCK TABLES;
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `users` (
-  `utente_id` int(11) NOT NULL AUTO_INCREMENT,
-  `amministratore` int(11) NOT NULL,
-  `azienda_id_mmas` int(11) NOT NULL,
-  `clruolo_id` int(11) DEFAULT '1',
-  `ins_utente` int(11) NOT NULL,
-  `nome_utente` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `ruolo_id` int(11) NOT NULL,
-  `azienda_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`utente_id`),
-  KEY `FKlfahuhkw3l50hb2l3w4j1hj43` (`azienda_id`),
-  CONSTRAINT `FKlfahuhkw3l50hb2l3w4j1hj43` FOREIGN KEY (`azienda_id`) REFERENCES `company` (`azienda_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,1,1,1,1,'admin','pass1',1,1),(2,2,2,2,2,'manager','pass2',2,2);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `usersgis`
@@ -877,8 +565,8 @@ CREATE TABLE `usersgis` (
   `id_user` int(11) unsigned NOT NULL,
   `id_company` int(11) unsigned NOT NULL,
   `id_company_mGis` int(11) unsigned NOT NULL,
-  `user_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_name` varchar(20) CHARACTER SET utf8mb4  DEFAULT NULL,
+  `password` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
   `id_role` int(11) unsigned DEFAULT NULL,
   `administrator` int(11) DEFAULT NULL,
   `users_ins` int(11) unsigned NOT NULL,
@@ -886,7 +574,7 @@ CREATE TABLE `usersgis` (
   PRIMARY KEY (`id_user`),
   KEY `usersgis_FK_companies` (`id_company`),
   CONSTRAINT `usersgis_FK_companies` FOREIGN KEY (`id_company`) REFERENCES `companies` (`id_company`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
