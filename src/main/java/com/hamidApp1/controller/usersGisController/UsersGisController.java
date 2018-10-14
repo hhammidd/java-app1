@@ -8,6 +8,8 @@ import com.hamidApp1.model.users.User;
 import com.hamidApp1.model.usersGis.*;
 import com.hamidApp1.service.usersGis.UsersGisServices;
 import com.hamidApp1.service.util.Util;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -75,15 +77,18 @@ public class UsersGisController {
                 String secretKey = null;
                 secretKey = Util.getJwtsSecretKey();
 
-                if ()
+
 
                 u = usersGisServices.findUserInfo(usergis);
 
-                if (u != null){
-                   String userPass
-                }
+                String secretKey = null;
+                Date date = new Date();
+                long t = date.getTime();
+                final int twoHours = 7200000 ;
+                token = Jwts.builder().setSubject("HAMID").claim("role", "1").setIssuedAt(date)
+                        .setExpiration(new Date(t + twoHours)).signWith(SignatureAlgorithm.HS256, secretKey).compact();
 
-                token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJIQU1JRCIsInJvbGUiOi";
+
                 tokenMap.put("token", token);
                 tokenMap.put("user", u);
                 return tokenMap;
