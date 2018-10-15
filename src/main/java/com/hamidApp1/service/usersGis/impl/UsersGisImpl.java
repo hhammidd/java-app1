@@ -95,4 +95,9 @@ public class UsersGisImpl implements UsersGisServices {
         // Take the permits in the UserPermitList
         return userTotInfoObj;
     }
+
+    @Override
+    public UsersGis findUsersByCod(String usergis) {
+        return usersGisQueryDao.findUsersUser_name(usergis);
+    }
 }

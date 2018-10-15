@@ -1,10 +1,5 @@
 package com.hamidApp1.controller.usersGisController;
 
-import com.hamidApp1.model.merchantFraud.MerchantFraudToolOutputBean;
-import com.hamidApp1.model.permissions.Permissions;
-import com.hamidApp1.model.pv.Pv;
-import com.hamidApp1.model.pv.PvRegComFilter;
-import com.hamidApp1.model.users.User;
 import com.hamidApp1.model.usersGis.*;
 import com.hamidApp1.service.usersGis.UsersGisServices;
 import com.hamidApp1.service.util.Util;
@@ -70,30 +65,94 @@ public class UsersGisController {
         public Map<String,Object> loginPermissionList(@RequestBody @Valid UserInput usergis) {
                 Map<String, Object> tokenMap = null;
                 String token = null;
-                UserLists u = null;
+                UsersGis u = null;
                 tokenMap = new HashMap<>();
 
                 BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
-                String secretKey = null;
+                String secretKey = "";
                 secretKey = Util.getJwtsSecretKey();
 
+                u = usersGisServices.findUsersByCod(usergis.getUser_name());
+
+                //u = usersGisServices.findByFirstName(usergis.getUser_name());
+                if (u != null) {
+
+                        if (!bcrypt.matches(usergis.getPassword(), u.getPassword())) {
+                                System.out.println("is not authorize");
+                                tokenMap.put("token", null);
+                                return tokenMap;
+                        } else {
+                                System.out.println("is match...");
+                        }
+
+                        Date date = new Date();
+                        long t = date.getTime();
+                        final int twoHours = 7200000;
+                        token = Jwts.builder().setSubject("HAMID").claim("role", "1").setIssuedAt(date)
+                                .setExpiration(new Date(t + twoHours)).signWith(SignatureAlgorithm.HS256, secretKey).compact();
 
 
-                u = usersGisServices.findUserInfo(usergis);
+                        tokenMap.put("token", token);
+                        tokenMap.put("user", u);
+                        return tokenMap;
+                }else {
+                        tokenMap.put("token", null);
+                        return tokenMap;
+                }
 
-                String secretKey = null;
-                Date date = new Date();
-                long t = date.getTime();
-                final int twoHours = 7200000 ;
-                token = Jwts.builder().setSubject("HAMID").claim("role", "1").setIssuedAt(date)
-                        .setExpiration(new Date(t + twoHours)).signWith(SignatureAlgorithm.HS256, secretKey).compact();
-
-
-                tokenMap.put("token", token);
-                tokenMap.put("user", u);
-                return tokenMap;
         }
 
+        /**
+         * this method take the username and password
+         * then take user and pass of the user name and check if they are match by pass which comming
+         *
+         * @param usergis
+         * @return
+         */
+        @RequestMapping(value = "/permissionslogin", method = RequestMethod.POST)
+        public Map<String,Object> loginFm(@RequestBody @Valid UsersGis usergis) {
+                //TODO do the decrypt
+                UsersGis u = null;
+                Map<String, Object> tokenMap = null;
+                String token = null;
+
+                tokenMap = new HashMap<>();
+
+                BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+                String secretKey = "";
+                secretKey = Util.getJwtsSecretKey();
+
+                if (usergis.getPassword() != null && !usergis.getPassword().isEmpty()){
+                        u = usersGisServices.findUsersByCod(usergis.getUser_name());
+                } else {
+                        System.out.println("the pass is empty");
+                }
+                if (u != null) {
+
+                        if (!bcrypt.matches(usergis.getPassword(), u.getPassword())) {
+                                System.out.println("is not authorize");
+                                tokenMap.put("token", null);
+                                return tokenMap;
+                        } else {
+                                System.out.println("is match...");
+                        }
+
+                        Date date = new Date();
+                        long t = date.getTime();
+                        final int twoHours = 7200000;
+                        token = Jwts.builder().setSubject("HAMID").claim("role", "" + u.getId_role()+ "").setIssuedAt(date)
+                                .setExpiration(new Date(t + twoHours)).signWith(SignatureAlgorithm.HS256, secretKey).compact();
+
+
+                        tokenMap.put("token", token);
+                        tokenMap.put("user", u);
+                        return tokenMap;
+
+                } else {
+                        tokenMap.put("token", "");
+                        return tokenMap;
+                }
+        }
 
 }
 

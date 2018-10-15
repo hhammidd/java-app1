@@ -12,4 +12,7 @@ public interface UsersGisDao extends JpaRepository<UsersGis, Integer> {
 
     @Query("SELECT u FROM UsersGis u WHERE u.user_name = :user_name")
     List<UsersGis> findOne(@Param("user_name") String firstName);
+
+    @Query("SELECT u FROM UsersGis u WHERE u.user_name = :user_name")
+    UsersGis findUserName(@Param("user_name") String firstName);
 }

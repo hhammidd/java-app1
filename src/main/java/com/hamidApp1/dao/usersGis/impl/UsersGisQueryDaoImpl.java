@@ -94,5 +94,10 @@ public class UsersGisQueryDaoImpl implements UsersGisQueryDao {
 
     }
 
+    @Override
+    public UsersGis findUsersUser_name(String usergis) {
+        return usersGisDao.findUserName(usergis);
+    }
+
 
 }

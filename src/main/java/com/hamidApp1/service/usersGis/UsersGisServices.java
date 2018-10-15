@@ -17,4 +17,7 @@ public interface UsersGisServices {
 
     List<UserPermissions> findUsersPermission(UserInput usergis);
     UserLists findUserInfo(UserInput usergis);
+
+    // this will take user_name and take back other data
+    UsersGis findUsersByCod(String usergis);
 }

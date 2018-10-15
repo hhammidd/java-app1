@@ -18,4 +18,5 @@ public interface UsersGisQueryDao {
 
     List<UserPermissions> findUsersPermit(UserInfo up);
 
+    UsersGis findUsersUser_name(String usergis);
 }
